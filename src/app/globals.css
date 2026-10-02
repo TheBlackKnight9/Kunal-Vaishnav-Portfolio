@@ -1,0 +1,124 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-display: 'Syne', sans-serif;
+    --font-editorial: 'Fraunces', Georgia, serif;
+    --font-sans: 'Instrument Sans', system-ui, -apple-system, sans-serif;
+    --bg-living-green: #1b2019;
+    --bg-dark-moss: #141812;
+    --bg-card-light: #f4f6ef;
+    --card-ink: #182015;
+    --card-ink-muted: #5c6b56;
+    --accent-sage: #9ec297;
+    --accent-glow: rgba(158, 194, 151, 0.3);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: #1b2019;
+    color: #edf2e8;
+  }
+
+  body {
+    background-color: #1b2019;
+    color: #edf2e8;
+    overflow-x: hidden;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  ::selection {
+    background: rgba(158, 194, 151, 0.35);
+    color: #ffffff;
+  }
+}
+
+/* Custom Living Green Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #141812;
+}
+::-webkit-scrollbar-thumb {
+  background: #333d2f;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #4a5944;
+}
+
+/* Living Green Atmospheric Backgrounds */
+.living-green-bg {
+  background-color: #1b2019;
+  background-image: 
+    radial-gradient(ellipse 80% 50% at 50% 0%, rgba(94, 114, 85, 0.22) 0%, rgba(27, 32, 25, 0) 70%),
+    radial-gradient(circle at 10% 30%, rgba(68, 83, 62, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 90% 80%, rgba(55, 68, 50, 0.2) 0%, transparent 60%);
+}
+
+.living-green-card-light {
+  background: #f4f6ef;
+  color: #182015;
+  border-radius: 38px;
+  border: 1px solid #e1e9db;
+  box-shadow: 0 25px 55px -10px rgba(12, 17, 10, 0.35);
+  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.35s ease;
+}
+
+.living-green-card-light:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 32px 70px -10px rgba(12, 17, 10, 0.42);
+}
+
+.living-green-card-dark {
+  background: rgba(33, 40, 30, 0.82);
+  color: #edf2e8;
+  border-radius: 36px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 24px 50px -12px rgba(8, 11, 7, 0.6);
+  backdrop-filter: blur(16px);
+  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.3s ease;
+}
+
+.living-green-card-dark:hover {
+  transform: translateY(-4px);
+  border-color: rgba(158, 194, 151, 0.3);
+}
+
+/* Living Green Circular Action Knob */
+.sylva-knob {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #ffffff;
+  color: #182015;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  transition: transform 0.25s ease, background-color 0.25s ease;
+}
+
+.sylva-knob:hover {
+  transform: scale(1.08);
+  background: #eef3e8;
+}
+
+/* Living Green Pill Elements */
+.sylva-pill {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(43, 53, 39, 0.45);
+  backdrop-filter: blur(12px);
+  color: #dce5d7;
+  transition: all 0.25s ease;
+}
+
+.sylva-pill:hover {
+  border-color: rgba(158, 194, 151, 0.45);
+  background: rgba(58, 72, 53, 0.6);
+  color: #ffffff;
+}
