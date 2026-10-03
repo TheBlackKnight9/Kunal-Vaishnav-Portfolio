@@ -127,6 +127,8 @@ export interface ScrollTextRevealProps {
   externalProgress?: MotionValue<number>;
   targetRef?: React.RefObject<HTMLDivElement>;
   variant?: "inline" | "fullpage";
+  headlineWindow?: [number, number];
+  paragraphWindow?: [number, number];
 }
 
 export function ScrollTextReveal({
@@ -135,10 +137,12 @@ export function ScrollTextReveal({
   className = "",
   headlineClassName = "",
   paragraphClassName = "",
-  scatterIntensity = 0.8,
+  scatterIntensity = 0.75,
   externalProgress,
   targetRef,
   variant = "inline",
+  headlineWindow = [0.04, 0.38],
+  paragraphWindow = [0.26, 0.74],
 }: ScrollTextRevealProps) {
   const localRef = useRef<HTMLDivElement>(null);
   const activeRef = targetRef || localRef;
@@ -204,6 +208,8 @@ export function ScrollTextReveal({
                     totalWords={words.length}
                     scrollYProgress={scrollYProgress}
                     reducedMotion={reducedMotion}
+                    startWindow={0.35}
+                    endWindow={0.8}
                   />
                 ))}
               </p>
@@ -233,8 +239,8 @@ export function ScrollTextReveal({
                   reducedMotion={reducedMotion}
                   scrollYProgress={scrollYProgress}
                   scatterIntensity={scatterIntensity}
-                  startWindow={0}
-                  endWindow={0.5}
+                  startWindow={headlineWindow[0]}
+                  endWindow={headlineWindow[1]}
                 />
               ),
             )}
@@ -254,8 +260,8 @@ export function ScrollTextReveal({
                 totalWords={words.length}
                 scrollYProgress={scrollYProgress}
                 reducedMotion={reducedMotion}
-                startWindow={0.25}
-                endWindow={0.85}
+                startWindow={paragraphWindow[0]}
+                endWindow={paragraphWindow[1]}
               />
             ))}
           </span>
