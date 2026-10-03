@@ -5,6 +5,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { PORTFOLIO_DATA } from "@/data/portfolioData";
 import { ArrowUpRight } from "lucide-react";
+import StrokeText from "./StrokeText";
 
 interface ContentsNavProps {
   activeCategory: string;
@@ -41,9 +42,22 @@ export default function ContentsNav({ activeCategory, onSelectCategory }: Conten
                 Index of Work
               </span>
             </div>
-            <h2 className="font-display text-5xl sm:text-6xl text-[#f4f7ef] font-bold tracking-tight">
-              Contents
-            </h2>
+            <StrokeText
+              text="Contents"
+              strokeColor="#82a379"
+              fillColor="#f4f7ef"
+              strokeWidth={1.4}
+              drawDuration={1.4}
+              fillDelay={0.2}
+              stagger={0.05}
+              ease="power2.out"
+              trigger="inView"
+              fillMode="wipe"
+              fontSize={56}
+              fontWeight={700}
+              letterSpacing={-1.5}
+              className="font-display"
+            />
           </div>
           <p className="text-[#a4b59f] text-sm sm:text-base font-light max-w-md">
             Structured case studies spanning mobile transit systems, EdTech profile redesigns, web applications, and brand identities.

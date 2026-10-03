@@ -38,13 +38,21 @@
 
   *,*::before,*::after{ box-sizing:border-box; margin:0; padding:0; }
 
-  html{ background:#383b34; }
+  html, body {
+    background: #383b34;
+    overflow: hidden !important;
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+  }
+  html::-webkit-scrollbar, body::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+  }
   body{
     font-family:'Lexend',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
     font-weight:300;
     color:var(--ink);
-    background:#383b34;
-    overflow-x:hidden;
     -webkit-font-smoothing:antialiased;
     -moz-osx-font-smoothing:grayscale;
   }
@@ -123,10 +131,7 @@
      pointer-parallax transform; putting both on one element means whichever
      is written last wins and the dock jumps out of centre. */
   .dock-wrap{
-    position:absolute; z-index:5;
-    top:calc(38 * var(--u)); left:0; right:0;
-    display:flex; justify-content:center;
-    pointer-events:none;
+    display: none !important;
   }
   .dock{
     pointer-events:auto;
@@ -338,15 +343,16 @@
      model are unchanged; only the iframe boundary has been removed. */
   .pill-clip{
     position:absolute; z-index:4;
-    left:calc(644 * var(--u)); top:calc(395 * var(--u));
-    width:calc(410 * var(--u)); height:calc(270 * var(--u));
-    margin:calc(-135 * var(--u)) 0 0 calc(-205 * var(--u));
-    clip-path:inset(calc(72 * var(--u)) calc(60 * var(--u))
-                    calc(26 * var(--u)) calc(60 * var(--u)) round calc(62 * var(--u)));
+    left:calc(520 * var(--u)); top:calc(395 * var(--u));
+    width:calc(640 * var(--u)); height:calc(270 * var(--u));
+    margin:calc(-135 * var(--u)) 0 0 calc(-320 * var(--u));
+    clip-path:none !important;
+    overflow:visible;
   }
   .pill{
-    position:absolute; inset:0; --mr:calc(150 * var(--u));
+    position:absolute; inset:0;
     display:grid; place-items:center;
+    clip-path:none !important;
   }
 
   .liquid-stage{
@@ -411,9 +417,10 @@
   .liquid-button .ico{ display:block; flex:none; overflow:visible; }
   .liquid-button .lbl{ display:block; transform:translateY(calc(2 * var(--lu))); }
   .liquid-button--explore{
-    padding:0 calc(224 * var(--lu)) 0 calc(95 * var(--lu));
+    padding:0 calc(260 * var(--lu)) 0 calc(130 * var(--lu));
     gap:calc(112 * var(--lu));
     font-size:calc(140 * var(--lu));
+    white-space:nowrap;
   }
   .liquid-button--explore .ico{
     width:calc(150 * var(--lu)); height:calc(150 * var(--lu));
@@ -760,9 +767,10 @@
     /* one column: the frame keeps its aspect, re-anchored to the left rail */
     .pill-clip{
       left:calc(34 * var(--u)); top:calc(440 * var(--u));
-      width:calc(506 * var(--u)); height:calc(334 * var(--u));
+      width:calc(640 * var(--u)); height:calc(334 * var(--u));
       margin:calc(-167 * var(--u)) 0 0 calc(-79 * var(--u));
-      clip-path:inset(calc(93 * var(--u)) calc(74 * var(--u)) calc(1 * var(--u)) calc(74 * var(--u)) round calc(76 * var(--u)));
+      clip-path:none !important;
+      overflow:visible;
     }
     .liquid-stage--explore{ --h:calc(74.4152 * var(--u)); }
     .play-wrap{ display:none; }
@@ -3560,6 +3568,16 @@ window.__seek   = v => { clock = v; drawn = null; };
     if (q) { BLADES_NEAR = +q[1]; BLADES_FAR = Math.round(+q[1] * 0.21); }
 
     renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: false, powerPreference: "high-performance" });
+    canvas.addEventListener('webglcontextlost', function(e) {
+      e.preventDefault();
+      isSceneVisible = false;
+    }, false);
+    canvas.addEventListener('webglcontextrestored', function() {
+      try {
+        build();
+        isSceneVisible = true;
+      } catch(e) {}
+    }, false);
     renderer.setClearColor(0x000000, 0);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.25));
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
@@ -4427,7 +4445,11 @@ window.__seek   = v => { clock = v; drawn = null; };
   });
 
   function renderFrame() {
-    if (!isSceneVisible || document.hidden) return;
+    if (!isSceneVisible || document.hidden || !renderer) return;
+    try {
+      var gl = renderer.getContext();
+      if (gl && gl.isContextLost && gl.isContextLost()) return;
+    } catch(err) { return; }
     var dt = Math.min(clock.getDelta(), 0.05);
     if (!REDUCED) uTime.value += dt;
 

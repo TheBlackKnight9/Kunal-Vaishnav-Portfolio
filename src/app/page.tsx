@@ -5,7 +5,6 @@ import Navbar from "@/components/Navbar";
 import Scene from "@/components/effects/sylva-hero/Scene";
 import WhoIAm from "@/components/WhoIAm";
 import ContentsNav from "@/components/ContentsNav";
-import SectionDivider from "@/components/SectionDivider";
 import ProjectsSection from "@/components/ProjectsSection";
 import VisualShowcase from "@/components/VisualShowcase";
 import ContactSection from "@/components/ContactSection";
@@ -49,9 +48,6 @@ export default function Home() {
         activeCategory={activeCategory}
         onSelectCategory={(cat) => setActiveCategory(cat)}
       />
-
-      {/* Section Divider: "UI UX design" glowing banner */}
-      <SectionDivider />
 
       {/* Selected UI UX Projects Case Studies (RSRTC, NPrep, ExamWali, Hostel Hub) */}
       <ProjectsSection />

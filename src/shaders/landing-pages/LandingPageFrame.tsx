@@ -146,8 +146,8 @@ export function LandingPageFrame({
       <iframe
         ref={frameRef}
         title={title}
-        {...(srcDoc ? { srcDoc } : { src: sourceUrl })}
-        sandbox={srcDoc ? SRCDOC_FRAME_SANDBOX : URL_FRAME_SANDBOX}
+        {...(srcDoc ? { srcDoc, sandbox: SRCDOC_FRAME_SANDBOX } : { src: sourceUrl })}
+        scrolling="no"
         loading="eager"
         onLoad={(event) => {
           applyPageCustomization(event.currentTarget, customization);
@@ -163,6 +163,7 @@ export function LandingPageFrame({
           width: "100%",
           height: "100%",
           border: 0,
+          overflow: "hidden",
           background: "#080808",
           // A background presentation begins life as the complete source page.
           // Keep that page visually sealed until onLoad has installed the

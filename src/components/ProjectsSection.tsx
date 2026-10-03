@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { PORTFOLIO_DATA, Project } from "@/data/portfolioData";
 import ProjectCard from "./ProjectCard";
 import ProjectModal from "./ProjectModal";
+import StrokeText from "./StrokeText";
 
 export default function ProjectsSection() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
@@ -21,9 +22,22 @@ export default function ProjectsSection() {
                 Shipped Systems & Apps
               </span>
             </div>
-            <h2 className="font-display text-5xl sm:text-6xl md:text-7xl text-[#f4f7ef] font-bold tracking-tight">
-              Selected Works
-            </h2>
+            <StrokeText
+              text="Selected Works"
+              strokeColor="#82a379"
+              fillColor="#f4f7ef"
+              strokeWidth={1.4}
+              drawDuration={1.6}
+              fillDelay={0.2}
+              stagger={0.04}
+              ease="power2.out"
+              trigger="inView"
+              fillMode="wipe"
+              fontSize={60}
+              fontWeight={700}
+              letterSpacing={-1.8}
+              className="font-display"
+            />
           </div>
           <p className="text-[#a4b59f] text-sm sm:text-base font-light max-w-md">
             Four end-to-end design case studies combining research, UI systems, and interactive Figma prototypes.

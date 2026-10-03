@@ -5,6 +5,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { PORTFOLIO_DATA } from "@/data/portfolioData";
 import { ArrowUpRight, Sparkles } from "lucide-react";
+import StrokeText from "./StrokeText";
 
 export default function VisualShowcase() {
   const [activeTab, setActiveTab] = useState<"social" | "logo">("social");
@@ -22,9 +23,22 @@ export default function VisualShowcase() {
                 Visual Disciplines
               </span>
             </div>
-            <h2 className="font-display text-5xl sm:text-6xl md:text-7xl text-[#f4f7ef] font-bold tracking-tight">
-              Brand & Visuals
-            </h2>
+            <StrokeText
+              text="Brand & Visuals"
+              strokeColor="#82a379"
+              fillColor="#f4f7ef"
+              strokeWidth={1.4}
+              drawDuration={1.6}
+              fillDelay={0.2}
+              stagger={0.04}
+              ease="power2.out"
+              trigger="inView"
+              fillMode="wipe"
+              fontSize={60}
+              fontWeight={700}
+              letterSpacing={-1.8}
+              className="font-display"
+            />
           </div>
 
           {/* Living Green Pill Tabs */}

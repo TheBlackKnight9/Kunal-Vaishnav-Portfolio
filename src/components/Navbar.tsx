@@ -13,13 +13,19 @@ export default function Navbar() {
       setScrolled(window.scrollY > 40);
 
       // Detect current section in view
-      const sections = ["contact", "showcase", "projects", "contents", "who-i-am"];
+      const sections = [
+        { id: "contact", navId: "contact" },
+        { id: "showcase", navId: "showcase" },
+        { id: "projects", navId: "projects" },
+        { id: "contents", navId: "who-i-am" },
+        { id: "who-i-am", navId: "who-i-am" },
+      ];
       const scrollPos = window.scrollY + 220;
 
-      for (const sectionId of sections) {
-        const el = document.getElementById(sectionId);
+      for (const item of sections) {
+        const el = document.getElementById(item.id);
         if (el && el.offsetTop <= scrollPos) {
-          setActiveSection(sectionId);
+          setActiveSection(item.navId);
           return;
         }
       }
@@ -47,20 +53,7 @@ export default function Navbar() {
       ),
     },
     {
-      name: "Contents",
-      href: "#contents",
-      id: "contents",
-      icon: (
-        <svg viewBox="0 0 16 16" className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round">
-          <rect x="2" y="2" width="5" height="5" rx="1" />
-          <rect x="9" y="2" width="5" height="5" rx="1" />
-          <rect x="2" y="9" width="5" height="5" rx="1" />
-          <rect x="9" y="9" width="5" height="5" rx="1" />
-        </svg>
-      ),
-    },
-    {
-      name: "Work",
+      name: "Works",
       href: "#projects",
       id: "projects",
       icon: (
@@ -98,36 +91,34 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-4 sm:top-6 left-0 right-0 z-50 transition-all duration-500 flex flex-col items-center pointer-events-none px-4 ${
-        scrolled
-          ? "opacity-100 translate-y-0"
-          : "opacity-0 -translate-y-4"
-      }`}
+      className="fixed top-4 sm:top-6 left-0 right-0 z-50 transition-all duration-500 flex flex-col items-center pointer-events-none px-4 opacity-100 translate-y-0"
     >
       {/* ── ThreeUI Sylva Glass Dock Capsule ── */}
-      <div className="pointer-events-auto flex items-center gap-1.5 sm:gap-2 p-1.5 sm:p-2 rounded-[22px] border border-white/[0.12] bg-[linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0)_42%),rgba(27,33,24,0.88)] backdrop-blur-2xl shadow-[0_16px_36px_rgba(10,14,8,0.45),inset_0_1px_0_rgba(255,255,255,0.12)] transition-all">
+      <div
+        className={`pointer-events-auto flex items-center gap-1.5 sm:gap-2 p-1.5 sm:p-2 rounded-[22px] border backdrop-blur-2xl transition-all duration-300 ${
+          scrolled
+            ? "border-white/[0.14] bg-[linear-gradient(180deg,rgba(255,255,255,0.08),rgba(255,255,255,0)_42%),rgba(27,33,24,0.92)] shadow-[0_18px_40px_rgba(10,14,8,0.55),inset_0_1px_0_rgba(255,255,255,0.14)]"
+            : "border-white/[0.10] bg-[linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0)_42%),rgba(24,30,22,0.82)] shadow-[0_12px_28px_rgba(10,14,8,0.38),inset_0_1px_0_rgba(255,255,255,0.10)]"
+        }`}
+      >
         
-        {/* Brand / Mark: Authentic Pale Ivory Tile (.dock-mark) */}
+        {/* Brand / Mark: KV Tile (.dock-mark) — Active on Landing Page */}
         <a
           href="#hero"
-          className="flex items-center gap-2.5 pl-1 pr-2.5 py-0.5 rounded-xl group transition-all"
-          aria-label="Kunal Vaishnav Home"
+          onClick={(e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: "smooth" });
+            setActiveSection("hero");
+          }}
+          className={`h-9 px-3.5 rounded-xl text-xs font-mono font-bold inline-flex items-center justify-center transition-all ${
+            activeSection === "hero"
+              ? "bg-[#f2f3ef] text-[#1e241b] border border-[#f2f3ef] shadow-md font-black scale-105"
+              : "bg-white/[0.04] text-white/70 hover:text-white hover:bg-[#232b1f] hover:border-white/15 border border-transparent font-medium"
+          }`}
+          aria-label="Kunal Vaishnav — Home"
         >
-          <span className="w-8 h-8 rounded-xl bg-[#eef1e7] text-[#23261f] flex items-center justify-center font-bold text-xs tracking-wider shadow-sm group-hover:bg-white group-hover:scale-105 transition-all">
-            KV
-          </span>
-          <div className="hidden xl:flex flex-col text-left">
-            <span className="font-display text-xs font-semibold tracking-wide text-[#f4f7ef] leading-tight group-hover:text-[#a8cca2] transition-colors">
-              Kunal Vaishnav
-            </span>
-            <span className="text-[8.5px] tracking-[0.16em] uppercase text-[#96a893] font-mono leading-tight">
-              UI/UX & Product Design
-            </span>
-          </div>
+          <span className="tracking-wider">KV</span>
         </a>
-
-        {/* Subtle Separator */}
-        <div className="hidden xl:block w-[1px] h-4 bg-white/10 mx-0.5" />
 
         {/* Center Dock Items (.dock-item) */}
         <nav className="hidden md:flex items-center gap-1.5" aria-label="Primary Navigation">
@@ -137,10 +128,10 @@ export default function Navbar() {
               <a
                 key={link.name}
                 href={link.href}
-                className={`h-9 px-3 rounded-xl text-[11px] uppercase tracking-[0.15em] font-medium font-mono inline-flex items-center gap-2 transition-all ${
+                className={`h-9 px-3.5 rounded-xl text-[11px] uppercase tracking-[0.15em] font-mono inline-flex items-center gap-2 transition-all ${
                   isActive
                     ? "bg-[#f2f3ef] text-[#1e241b] border border-[#f2f3ef] shadow-md font-semibold"
-                    : "bg-white/[0.04] text-white/70 hover:text-white hover:bg-[#232b1f] hover:border-white/15 border border-transparent"
+                    : "bg-white/[0.04] text-white/70 hover:text-white hover:bg-[#232b1f] hover:border-white/15 border border-transparent font-medium"
                 }`}
               >
                 <span className={`transition-opacity ${isActive ? "opacity-100" : "opacity-60"}`}>
@@ -185,7 +176,7 @@ export default function Navbar() {
           {/* Get In Touch CTA Tile */}
           <a
             href="#contact"
-            className="h-9 px-4 rounded-xl bg-[#eef1e7] text-[#1a2217] hover:bg-white text-[11px] font-semibold tracking-wider uppercase font-mono shadow-sm hover:shadow-md transition-all flex items-center gap-1.5 ml-1"
+            className="h-9 px-3.5 rounded-xl bg-[#eef1e7] text-[#1a2217] hover:bg-white text-[11px] font-semibold tracking-wider uppercase font-mono shadow-sm hover:shadow-md transition-all flex items-center gap-1.5 ml-1"
           >
             <span>Get In Touch</span>
             <ArrowUpRight className="w-3.5 h-3.5 text-[#1a2217]" />
@@ -207,6 +198,24 @@ export default function Navbar() {
       {mobileMenuOpen && (
         <div className="pointer-events-auto mt-2 w-full max-w-sm bg-[#1b2218]/95 backdrop-blur-2xl border border-white/10 rounded-2xl p-5 shadow-2xl">
           <nav className="flex flex-col gap-2">
+            <a
+              href="#hero"
+              onClick={() => {
+                setMobileMenuOpen(false);
+                window.scrollTo({ top: 0, behavior: "smooth" });
+                setActiveSection("hero");
+              }}
+              className={`px-4 py-2.5 rounded-xl text-xs uppercase tracking-[0.14em] font-medium font-mono flex items-center gap-3 transition-all ${
+                activeSection === "hero"
+                  ? "bg-[#eef1e7] text-[#182015] font-semibold"
+                  : "text-white/70 hover:text-white hover:bg-white/[0.04]"
+              }`}
+            >
+              <span className="w-5 h-5 rounded-md bg-[#182015] text-[#f2f3ef] flex items-center justify-center font-bold text-[10px]">
+                KV
+              </span>
+              <span>Home</span>
+            </a>
             {navLinks.map((link) => {
               const isActive = activeSection === link.id;
               return (

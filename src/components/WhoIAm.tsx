@@ -1,13 +1,15 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { PORTFOLIO_DATA } from "@/data/portfolioData";
 import { ArrowUpRight, Copy, Check, Mail, Phone, MapPin } from "lucide-react";
+import { ScrollTextReveal } from "./scroll-text-reveal-animation/scroll-text-reveal";
 
 export default function WhoIAm() {
   const [copied, setCopied] = useState(false);
+  const cardRef = useRef<HTMLDivElement>(null);
 
   const handleCopyEmail = () => {
     navigator.clipboard.writeText(PORTFOLIO_DATA.contact.email);
@@ -28,6 +30,7 @@ export default function WhoIAm() {
         
         {/* Living Green Profile Card */}
         <motion.div
+          ref={cardRef}
           initial={{ opacity: 0, y: 35 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -49,13 +52,14 @@ export default function WhoIAm() {
                 </span>
               </div>
 
-              <h2 className="font-editorial italic text-4xl sm:text-5xl md:text-6xl text-[#182015] font-normal tracking-tight mb-6">
-                Thoughtful by design.
-              </h2>
-
-              <p className="text-[#43523e] text-base sm:text-lg leading-relaxed mb-8 font-light max-w-xl">
-                I&apos;m a UI/UX and Product Designer dedicated to building thoughtful digital experiences that inspire and connect. By combining human-centered design principles with AI-powered productivity, I transform complex workflows into elegant, functional, and impactful products.
-              </p>
+              <ScrollTextReveal
+                headline="Thoughtful by design."
+                paragraph="I'm a UI/UX and Product Designer dedicated to building thoughtful digital experiences that inspire and connect. By combining human-centered design principles with AI-powered productivity, I transform complex workflows into elegant, functional, and impactful products."
+                headlineClassName="text-4xl sm:text-5xl md:text-6xl text-[#182015] mb-6"
+                paragraphClassName="text-[#43523e] text-base sm:text-lg mb-8 max-w-xl"
+                scatterIntensity={0.65}
+                targetRef={cardRef}
+              />
 
               {/* Software Tool Chips */}
               <div className="mb-10">
