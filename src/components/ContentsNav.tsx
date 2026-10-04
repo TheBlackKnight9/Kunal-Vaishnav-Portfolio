@@ -16,15 +16,15 @@ export default function ContentsNav({ activeCategory, onSelectCategory }: Conten
   // Map category cards to actual project screenshots
   const categoryMeta: Record<string, { image: string; tag: string }> = {
     uiux: {
-      image: "/assets/rsrtc_phones.jpg",
+      image: "/assets/new1.jpeg",
       tag: "Discipline 01 • Case Studies",
     },
     social: {
-      image: "/assets/cat_social.jpg",
+      image: "/assets/new2.jpeg",
       tag: "Discipline 02 • Campaigns",
     },
     logo: {
-      image: "/assets/cat_logo.jpg",
+      image: "/assets/new3.jpeg",
       tag: "Discipline 03 • Brand Marks",
     },
   };

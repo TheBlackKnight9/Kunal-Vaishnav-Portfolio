@@ -78,7 +78,7 @@ export default function VisualShowcase() {
               {/* Media Plate */}
               <div className="lg:col-span-7 relative aspect-[4/3] rounded-[28px] overflow-hidden bg-[#1c2319] border-2 border-[#dce6d6] shadow-md">
                 <Image
-                  src="/assets/cat_social.jpg"
+                  src="/assets/new4.jpeg"
                   alt="Social Media Creatives"
                   fill
                   className="object-cover"
@@ -127,7 +127,7 @@ export default function VisualShowcase() {
               {/* Media Plate */}
               <div className="lg:col-span-7 relative aspect-[4/3] rounded-[28px] overflow-hidden bg-[#1c2319] border-2 border-[#dce6d6] shadow-md">
                 <Image
-                  src="/assets/cat_logo.jpg"
+                  src="/assets/new5.jpeg"
                   alt="Logo and Brand Marks"
                   fill
                   className="object-cover"

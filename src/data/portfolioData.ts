@@ -43,21 +43,21 @@ export const PORTFOLIO_DATA = {
       id: "uiux",
       number: "1.",
       title: "UI UX",
-      image: "/assets/cat_uiux.jpg",
+      image: "/assets/new1.jpeg",
       description: "End-to-end user experience design, wireframes, component design systems, and clickable prototypes."
     },
     {
       id: "social",
       number: "2.",
       title: "Social Media",
-      image: "/assets/cat_social.jpg",
+      image: "/assets/new2.jpeg",
       description: "High-impact visual campaigns, social banners, 3D product renders, and engaging content graphics."
     },
     {
       id: "logo",
       number: "3.",
       title: "Logo & Branding",
-      image: "/assets/cat_logo.jpg",
+      image: "/assets/new3.jpeg",
       description: "Distinct visual identities, memorable marks, brand guideline systems, and custom typography."
     },
   ],
