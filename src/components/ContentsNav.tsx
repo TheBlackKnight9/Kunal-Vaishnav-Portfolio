@@ -16,7 +16,7 @@ export default function ContentsNav({ activeCategory, onSelectCategory }: Conten
   // Map category cards to actual project screenshots
   const categoryMeta: Record<string, { image: string; tag: string }> = {
     uiux: {
-      image: "/assets/new1.jpeg",
+      image: "/assets/new3.jpeg",
       tag: "Discipline 01 • Case Studies",
     },
     social: {
@@ -24,7 +24,7 @@ export default function ContentsNav({ activeCategory, onSelectCategory }: Conten
       tag: "Discipline 02 • Campaigns",
     },
     logo: {
-      image: "/assets/new3.jpeg",
+      image: "/assets/new1.jpeg",
       tag: "Discipline 03 • Brand Marks",
     },
   };

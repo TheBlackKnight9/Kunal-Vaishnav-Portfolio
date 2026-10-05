@@ -91,7 +91,7 @@ export default function Navbar() {
 
   return (
     <header
-      className="fixed top-4 sm:top-6 left-0 right-0 z-50 transition-all duration-500 flex flex-col items-center pointer-events-none px-4 opacity-100 translate-y-0"
+      className="fixed top-4 sm:top-6 left-0 right-0 z-50 transition-all duration-500 flex flex-col items-center pointer-events-none px-4 opacity-100 translate-y-0 font-montserrat"
     >
       {/* ── ThreeUI Sylva Glass Dock Capsule ── */}
       <div
@@ -110,7 +110,7 @@ export default function Navbar() {
             window.scrollTo({ top: 0, behavior: "smooth" });
             setActiveSection("hero");
           }}
-          className={`h-9 px-3.5 rounded-xl text-xs font-mono font-bold inline-flex items-center justify-center transition-all ${
+          className={`h-9 px-3.5 rounded-xl text-xs font-montserrat font-bold inline-flex items-center justify-center transition-all ${
             activeSection === "hero"
               ? "bg-[#f2f3ef] text-[#1e241b] border border-[#f2f3ef] shadow-md font-black scale-105"
               : "bg-white/[0.04] text-white/70 hover:text-white hover:bg-[#232b1f] hover:border-white/15 border border-transparent font-medium"
@@ -128,7 +128,7 @@ export default function Navbar() {
               <a
                 key={link.name}
                 href={link.href}
-                className={`h-9 px-3.5 rounded-xl text-[11px] uppercase tracking-[0.15em] font-mono inline-flex items-center gap-2 transition-all ${
+                className={`h-9 px-3.5 rounded-xl text-[11px] uppercase tracking-[0.14em] font-montserrat inline-flex items-center gap-2 transition-all ${
                   isActive
                     ? "bg-[#f2f3ef] text-[#1e241b] border border-[#f2f3ef] shadow-md font-semibold"
                     : "bg-white/[0.04] text-white/70 hover:text-white hover:bg-[#232b1f] hover:border-white/15 border border-transparent font-medium"
@@ -176,7 +176,7 @@ export default function Navbar() {
           {/* Get In Touch CTA Tile */}
           <a
             href="#contact"
-            className="h-9 px-3.5 rounded-xl bg-[#eef1e7] text-[#1a2217] hover:bg-white text-[11px] font-semibold tracking-wider uppercase font-mono shadow-sm hover:shadow-md transition-all flex items-center gap-1.5 ml-1"
+            className="h-9 px-3.5 rounded-xl bg-[#eef1e7] text-[#1a2217] hover:bg-white text-[11px] font-semibold tracking-wider uppercase font-montserrat shadow-sm hover:shadow-md transition-all flex items-center gap-1.5 ml-1"
           >
             <span>Get In Touch</span>
             <ArrowUpRight className="w-3.5 h-3.5 text-[#1a2217]" />
@@ -205,7 +205,7 @@ export default function Navbar() {
                 window.scrollTo({ top: 0, behavior: "smooth" });
                 setActiveSection("hero");
               }}
-              className={`px-4 py-2.5 rounded-xl text-xs uppercase tracking-[0.14em] font-medium font-mono flex items-center gap-3 transition-all ${
+              className={`px-4 py-2.5 rounded-xl text-xs uppercase tracking-[0.14em] font-medium font-montserrat flex items-center gap-3 transition-all ${
                 activeSection === "hero"
                   ? "bg-[#eef1e7] text-[#182015] font-semibold"
                   : "text-white/70 hover:text-white hover:bg-white/[0.04]"
@@ -223,7 +223,7 @@ export default function Navbar() {
                   key={link.name}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className={`px-4 py-2.5 rounded-xl text-xs uppercase tracking-[0.14em] font-medium font-mono flex items-center gap-3 transition-all ${
+                  className={`px-4 py-2.5 rounded-xl text-xs uppercase tracking-[0.14em] font-medium font-montserrat flex items-center gap-3 transition-all ${
                     isActive
                       ? "bg-[#eef1e7] text-[#182015] font-semibold"
                       : "text-white/70 hover:text-white hover:bg-white/[0.04]"
@@ -264,7 +264,7 @@ export default function Navbar() {
               <a
                 href="#contact"
                 onClick={() => setMobileMenuOpen(false)}
-                className="px-3.5 py-1.5 rounded-lg bg-[#eef1e7] text-[#182015] text-[11px] font-semibold uppercase tracking-wider font-mono flex items-center gap-1"
+                className="px-3.5 py-1.5 rounded-lg bg-[#eef1e7] text-[#182015] text-[11px] font-semibold uppercase tracking-wider font-montserrat flex items-center gap-1"
               >
                 <span>Connect</span>
                 <ArrowUpRight className="w-3 h-3" />

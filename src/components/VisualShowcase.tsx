@@ -74,29 +74,33 @@ export default function VisualShowcase() {
             transition={{ duration: 0.6 }}
             className="living-green-card-light p-6 sm:p-12 relative overflow-hidden"
           >
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch">
               {/* Media Plate */}
-              <div className="lg:col-span-7 relative aspect-[4/3] rounded-[28px] overflow-hidden bg-[#1c2319] border-2 border-[#dce6d6] shadow-md">
-                <Image
-                  src="/assets/new4.jpeg"
-                  alt="Social Media Creatives"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 650px"
-                />
+              <div className="lg:col-span-7 flex">
+                <div className="relative w-full aspect-[4/3] sm:aspect-[16/11] lg:aspect-auto min-h-[380px] lg:min-h-[520px] lg:h-full rounded-[28px] overflow-hidden bg-[#1c2319] border-2 border-[#dce6d6] shadow-md">
+                  <Image
+                    src="/assets/new4.jpeg"
+                    alt="Social Media Creatives"
+                    fill
+                    className="object-cover object-center"
+                    sizes="(max-width: 1024px) 100vw, 650px"
+                  />
+                </div>
               </div>
 
               {/* Text Info */}
-              <div className="lg:col-span-5 space-y-6">
-                <div className="text-xs uppercase tracking-[0.2em] text-[#6b7b65] font-mono">
-                  Visual Systems
+              <div className="lg:col-span-5 flex flex-col justify-between space-y-6">
+                <div>
+                  <div className="text-xs uppercase tracking-[0.2em] text-[#6b7b65] font-mono mb-2">
+                    Visual Systems
+                  </div>
+                  <h3 className="font-display text-3xl sm:text-4xl text-[#182015] font-bold tracking-tight mb-3">
+                    Social Media Creatives
+                  </h3>
+                  <p className="text-[#3c4a37] text-base leading-relaxed font-light">
+                    High-impact visual campaigns, social banners, and promotional assets combining 3D product rendering, layout balance, and strong visual hierarchy.
+                  </p>
                 </div>
-                <h3 className="font-display text-3xl sm:text-4xl text-[#182015] font-bold tracking-tight">
-                  Social Media Creatives
-                </h3>
-                <p className="text-[#3c4a37] text-base leading-relaxed font-light">
-                  High-impact visual campaigns, social banners, and promotional assets combining 3D product rendering, layout balance, and strong visual hierarchy.
-                </p>
 
                 <div className="space-y-3 pt-4 border-t border-[#d8e3d2]">
                   {PORTFOLIO_DATA.socialMediaShowcase.map((item, idx) => (
@@ -123,29 +127,33 @@ export default function VisualShowcase() {
             transition={{ duration: 0.6 }}
             className="living-green-card-light p-6 sm:p-12 relative overflow-hidden"
           >
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch">
               {/* Media Plate */}
-              <div className="lg:col-span-7 relative aspect-[4/3] rounded-[28px] overflow-hidden bg-[#1c2319] border-2 border-[#dce6d6] shadow-md">
-                <Image
-                  src="/assets/new5.jpeg"
-                  alt="Logo and Brand Marks"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 650px"
-                />
+              <div className="lg:col-span-7 flex">
+                <div className="relative w-full aspect-[4/3] sm:aspect-[16/11] lg:aspect-auto min-h-[380px] lg:min-h-[520px] lg:h-full rounded-[28px] overflow-hidden bg-[#1c2319] border-2 border-[#dce6d6] shadow-md">
+                  <Image
+                    src="/assets/new5.jpeg"
+                    alt="Logo and Brand Marks"
+                    fill
+                    className="object-cover object-center"
+                    sizes="(max-width: 1024px) 100vw, 650px"
+                  />
+                </div>
               </div>
 
               {/* Text Info */}
-              <div className="lg:col-span-5 space-y-6">
-                <div className="text-xs uppercase tracking-[0.2em] text-[#6b7b65] font-mono">
-                  Identity Design
+              <div className="lg:col-span-5 flex flex-col justify-between space-y-6">
+                <div>
+                  <div className="text-xs uppercase tracking-[0.2em] text-[#6b7b65] font-mono mb-2">
+                    Identity Design
+                  </div>
+                  <h3 className="font-display text-3xl sm:text-4xl text-[#182015] font-bold tracking-tight mb-3">
+                    Logo & Identity Systems
+                  </h3>
+                  <p className="text-[#3c4a37] text-base leading-relaxed font-light">
+                    Distinct visual marks, emblems, and corporate identities engineered for longevity and cross-medium clarity across digital and physical touchpoints.
+                  </p>
                 </div>
-                <h3 className="font-display text-3xl sm:text-4xl text-[#182015] font-bold tracking-tight">
-                  Logo & Identity Systems
-                </h3>
-                <p className="text-[#3c4a37] text-base leading-relaxed font-light">
-                  Distinct visual marks, emblems, and corporate identities engineered for longevity and cross-medium clarity across digital and physical touchpoints.
-                </p>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-4 border-t border-[#d8e3d2]">
                   {PORTFOLIO_DATA.logoShowcase.map((logo, idx) => (

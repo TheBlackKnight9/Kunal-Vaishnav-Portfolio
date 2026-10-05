@@ -1,12 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+ 
+@font-face {
+  font-family: 'Salty Ages';
+  src: url('/fonts/Salty-Ages.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
 
 @layer base {
   :root {
     --font-display: 'Syne', sans-serif;
     --font-editorial: 'Fraunces', Georgia, serif;
     --font-sans: 'Instrument Sans', system-ui, -apple-system, sans-serif;
+    --font-montserrat: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
     --bg-living-green: #1b2019;
     --bg-dark-moss: #141812;
     --bg-card-light: #f4f6ef;

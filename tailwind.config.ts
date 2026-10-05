@@ -29,6 +29,8 @@ const config: Config = {
         editorial: ["'Fraunces'", "Georgia", "serif"],
         sans: ["'Instrument Sans'", "system-ui", "-apple-system", "sans-serif"],
         serif: ["'Fraunces'", "Georgia", "serif"],
+        salty: ["'Salty Ages'", "serif"],
+        montserrat: ["'Montserrat'", "sans-serif"],
       },
       letterSpacing: {
         tightest: "-0.04em",

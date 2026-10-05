@@ -43,7 +43,7 @@ export const PORTFOLIO_DATA = {
       id: "uiux",
       number: "1.",
       title: "UI UX",
-      image: "/assets/new1.jpeg",
+      image: "/assets/new3.jpeg",
       description: "End-to-end user experience design, wireframes, component design systems, and clickable prototypes."
     },
     {
@@ -57,7 +57,7 @@ export const PORTFOLIO_DATA = {
       id: "logo",
       number: "3.",
       title: "Logo & Branding",
-      image: "/assets/new3.jpeg",
+      image: "/assets/new1.jpeg",
       description: "Distinct visual identities, memorable marks, brand guideline systems, and custom typography."
     },
   ],
@@ -71,7 +71,7 @@ export const PORTFOLIO_DATA = {
       category: "uiux" as const,
       role: "UI UX Designer",
       duration: "20 Days",
-      image: "/assets/rsrtc_phones.jpg",
+      image: "/assets/new RSRTC Rajasthan Travel App Showcase.png",
       secondaryImage: "/assets/rsrtc_laptop.jpg",
       overview: "RSRTC Connect is a modern mobile app designed to simplify bus travel across Rajasthan. It allows users to search routes, book tickets, select seats, access digital tickets, and track buses in real time. The app focuses on providing a fast, intuitive, and stress-free travel experience.",
       problem: [
@@ -106,7 +106,7 @@ export const PORTFOLIO_DATA = {
       category: "uiux" as const,
       role: "Product Designer",
       duration: "5 Days",
-      image: "/assets/nprep_phones.jpg",
+      image: "/assets/new Dual Smartphone Learning Dashboard Mockup.png",
       secondaryImage: "/assets/nprep_solution.jpg",
       overview: "This project redesigns the NPrep profile experience for nursing aspirants. The new layout brings learning progress, daily goals, pending quizzes, study streaks, and achievements into one clear view. It improves content hierarchy, reduces emphasis on subscription details, and gives students a clear next action to continue learning confidently and efficiently.",
       problem: "The existing NPrep profile focused mainly on basic account information and subscription promotion. It did not clearly show learning progress, daily priorities, study consistency, or the next important task. As a result, students could not quickly understand their performance or decide what action to take next during their preparation journey.",
@@ -130,7 +130,7 @@ export const PORTFOLIO_DATA = {
       category: "uiux" as const,
       role: "UI UX Designer",
       duration: "Web Portal",
-      image: "/assets/examwali_laptop.jpg",
+      image: "/assets/crack any exam.png",
       overview: "This is a modern and user-friendly educational platform designed to help students prepare for competitive exams and academic studies. The homepage focuses on providing easy access to courses, study materials, and expert guidance through a clean and engaging interface.",
       keyFeatures: [
         "Smart omnibox search for notes, papers, syllabus and test series",
@@ -154,7 +154,7 @@ export const PORTFOLIO_DATA = {
       category: "uiux" as const,
       role: "UI UX & Product Designer",
       duration: "SaaS Dashboard",
-      image: "/assets/hostelhub_laptop.jpg",
+      image: "/assets/new hosthub.png",
       overview: "HostelHub is a digital hostel management platform designed to simplify hostel operations for both students and wardens. It provides features like room allocation, attendance tracking, mess menu updates, outpass requests, complaints, and student records in one centralized system.",
       flowDesignUrl: "https://www.figma.com/site/RNmn8GFAk10hlgp05oC9CL/Assesment-1?node-id=0-1&t=oZQWkgfgzaQAnZ2H-1",
       keyFeatures: [

@@ -46,7 +46,7 @@ export default function ProjectCard({ project, onOpenModal, index }: ProjectCard
             {/* Inset Plate with Vertical Aspect Ratio */}
             <div
               onClick={() => onOpenModal(project)}
-              className="relative aspect-[3/4] sm:aspect-[4/5] w-full rounded-[28px] overflow-hidden bg-[#1c2319] border-2 border-[#dce6d6] shadow-inner cursor-pointer"
+              className="relative aspect-[3/4] sm:aspect-[4/5] w-full rounded-[28px] overflow-hidden bg-white border-2 border-[#dce6d6] shadow-sm cursor-pointer"
             >
               <Image
                 src={project.image}
@@ -56,14 +56,14 @@ export default function ProjectCard({ project, onOpenModal, index }: ProjectCard
                 sizes="(max-width: 1024px) 100vw, 420px"
                 priority={index === 0}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#141a12]/50 via-transparent to-transparent pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/[0.04] via-transparent to-transparent pointer-events-none" />
 
               {/* Bottom overlay pill */}
               <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between pointer-events-none">
-                <span className="px-3 py-1 rounded-full bg-[#182015]/85 backdrop-blur-md text-[#eef4ea] text-[10px] font-mono">
+                <span className="px-3 py-1 rounded-full bg-[#182015]/85 backdrop-blur-md text-[#eef4ea] text-[10px] font-mono shadow-sm">
                   {project.role}
                 </span>
-                <span className="px-2.5 py-1 rounded-full bg-white/90 backdrop-blur-md text-[#182015] text-[10px] font-medium flex items-center gap-1 shadow-sm">
+                <span className="px-2.5 py-1 rounded-full bg-white/95 backdrop-blur-md text-[#182015] text-[10px] font-medium flex items-center gap-1 shadow-sm border border-[#dce6d6]">
                   <Sparkles className="w-2.5 h-2.5 text-[#4f6e45]" /> Inspect
                 </span>
               </div>

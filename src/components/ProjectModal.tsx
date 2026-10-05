@@ -77,7 +77,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
           <div className="overflow-y-auto p-6 sm:p-10 space-y-8">
             
             {/* Primary Mockup Image */}
-            <div className="relative aspect-[16/10] w-full rounded-[24px] overflow-hidden bg-[#1c2319] border-2 border-[#dce6d6] shadow-sm">
+            <div className="relative aspect-[16/10] w-full rounded-[24px] overflow-hidden bg-white border-2 border-[#dce6d6] shadow-sm">
               <Image
                 src={project.image}
                 alt={project.title}
@@ -181,7 +181,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                 <div className="text-xs uppercase tracking-[0.2em] text-[#6b7b65] font-mono mb-3">
                   Design System & Details
                 </div>
-                <div className="relative aspect-[16/10] w-full rounded-[24px] overflow-hidden bg-[#1c2319] border-2 border-[#dce6d6] shadow-sm">
+                <div className="relative aspect-[16/10] w-full rounded-[24px] overflow-hidden bg-white border-2 border-[#dce6d6] shadow-sm">
                   <Image
                     src={project.secondaryImage}
                     alt={`${project.title} Design Architecture`}

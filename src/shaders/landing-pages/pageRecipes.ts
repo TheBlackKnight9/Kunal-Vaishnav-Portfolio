@@ -410,6 +410,11 @@ body { font-family: ${type.body}; font-weight: ${type.bodyWeight}; }
 .headline, .ghost {
   font-family: ${type.heading};
 }
+.headline .headline-name-wrap,
+.headline .headline-shimmer {
+  font-family: 'Salty Ages', 'Syne', serif !important;
+  font-weight: 700 !important;
+}
 .headline {
   font-weight: ${type.headingWeight};
   font-size: ${unit(type.headingSize)};

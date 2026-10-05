@@ -168,10 +168,10 @@ export default function WhoIAm() {
               <div className="lg:col-span-5 flex justify-center lg:justify-end">
                 <div className="relative w-full max-w-[280px] sm:max-w-sm aspect-[3/4] rounded-[28px] sm:rounded-[32px] overflow-hidden bg-[#242b20] border-4 border-[#e3ebdc] shadow-xl group">
                   <Image
-                    src="/assets/Modern Minimalist Portrait Banner.png"
+                    src="/assets/kunal potrait new.png"
                     alt="Kunal Vaishnav — UI UX & Product Designer"
                     fill
-                    className="object-cover object-top group-hover:scale-105 transition-transform duration-700"
+                    className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
                     sizes="(max-width: 768px) 100vw, 420px"
                     priority
                   />
