@@ -30,6 +30,7 @@ export const PORTFOLIO_DATA = {
     location: "Rajasthan, India",
     instagram: "https://instagram.com",
     linkedin: "https://linkedin.com",
+    behance: "https://www.behance.net/kunalvaishnav3/projects",
     figma: "https://www.figma.com",
   },
   skills: [

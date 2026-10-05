@@ -411,7 +411,9 @@ body { font-family: ${type.body}; font-weight: ${type.bodyWeight}; }
   font-family: ${type.heading};
 }
 .headline .headline-name-wrap,
-.headline .headline-shimmer {
+.headline .headline-shimmer,
+.headline .dia-text-reveal,
+#dia-product-design {
   font-family: 'Salty Ages', 'Syne', serif !important;
   font-weight: 700 !important;
 }

@@ -77,15 +77,25 @@ export default function VisualShowcase() {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch">
               {/* Media Plate */}
               <div className="lg:col-span-7 flex">
-                <div className="relative w-full aspect-[4/3] sm:aspect-[16/11] lg:aspect-auto min-h-[380px] lg:min-h-[520px] lg:h-full rounded-[28px] overflow-hidden bg-[#1c2319] border-2 border-[#dce6d6] shadow-md">
+                <a
+                  href="https://www.behance.net/kunalvaishnav3/projects"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="relative w-full aspect-[4/3] sm:aspect-[16/11] lg:aspect-auto min-h-[380px] lg:min-h-[520px] lg:h-full rounded-[28px] overflow-hidden bg-[#1c2319] border-2 border-[#dce6d6] shadow-md block group cursor-pointer"
+                  title="Click to view projects on Behance"
+                >
                   <Image
                     src="/assets/new4.jpeg"
                     alt="Social Media Creatives"
                     fill
-                    className="object-cover object-center"
+                    className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
                     sizes="(max-width: 1024px) 100vw, 650px"
                   />
-                </div>
+                  <div className="absolute bottom-4 right-4 z-10 opacity-0 group-hover:opacity-100 transition-opacity bg-[#182015]/90 backdrop-blur-md px-3.5 py-1.5 rounded-full text-white text-[11px] font-montserrat font-medium flex items-center gap-1.5 shadow-lg">
+                    <span>See Work</span>
+                    <ArrowUpRight className="w-3.5 h-3.5 text-[#9ec297]" />
+                  </div>
+                </a>
               </div>
 
               {/* Text Info */}
@@ -114,6 +124,18 @@ export default function VisualShowcase() {
                     </div>
                   ))}
                 </div>
+
+                <div className="pt-2">
+                  <a
+                    href="https://www.behance.net/kunalvaishnav3/projects"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#182015] hover:bg-[#283523] text-[#f4f7ef] text-xs uppercase tracking-wider font-montserrat font-semibold shadow-md hover:shadow-lg transition-all group"
+                  >
+                    <span>See Work</span>
+                    <ArrowUpRight className="w-3.5 h-3.5 text-[#9ec297] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                  </a>
+                </div>
               </div>
             </div>
           </motion.div>
@@ -130,15 +152,25 @@ export default function VisualShowcase() {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch">
               {/* Media Plate */}
               <div className="lg:col-span-7 flex">
-                <div className="relative w-full aspect-[4/3] sm:aspect-[16/11] lg:aspect-auto min-h-[380px] lg:min-h-[520px] lg:h-full rounded-[28px] overflow-hidden bg-[#1c2319] border-2 border-[#dce6d6] shadow-md">
+                <a
+                  href="https://www.behance.net/kunalvaishnav3/projects"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="relative w-full aspect-[4/3] sm:aspect-[16/11] lg:aspect-auto min-h-[380px] lg:min-h-[520px] lg:h-full rounded-[28px] overflow-hidden bg-[#1c2319] border-2 border-[#dce6d6] shadow-md block group cursor-pointer"
+                  title="Click to view projects on Behance"
+                >
                   <Image
                     src="/assets/new5.jpeg"
                     alt="Logo and Brand Marks"
                     fill
-                    className="object-cover object-center"
+                    className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
                     sizes="(max-width: 1024px) 100vw, 650px"
                   />
-                </div>
+                  <div className="absolute bottom-4 right-4 z-10 opacity-0 group-hover:opacity-100 transition-opacity bg-[#182015]/90 backdrop-blur-md px-3.5 py-1.5 rounded-full text-white text-[11px] font-montserrat font-medium flex items-center gap-1.5 shadow-lg">
+                    <span>See Work</span>
+                    <ArrowUpRight className="w-3.5 h-3.5 text-[#9ec297]" />
+                  </div>
+                </a>
               </div>
 
               {/* Text Info */}
@@ -169,6 +201,18 @@ export default function VisualShowcase() {
                       </div>
                     </div>
                   ))}
+                </div>
+
+                <div className="pt-2">
+                  <a
+                    href="https://www.behance.net/kunalvaishnav3/projects"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#182015] hover:bg-[#283523] text-[#f4f7ef] text-xs uppercase tracking-wider font-montserrat font-semibold shadow-md hover:shadow-lg transition-all group"
+                  >
+                    <span>See Work</span>
+                    <ArrowUpRight className="w-3.5 h-3.5 text-[#9ec297] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                  </a>
                 </div>
               </div>
             </div>

@@ -246,9 +246,9 @@
   .headline{
     position:absolute; z-index:4;
     left:calc(46 * var(--u)); top:calc(202 * var(--u));
-    font-family:'Syne', 'Lexend', -apple-system, sans-serif;
-    font-size:calc(56 * var(--u)); line-height:calc(60 * var(--u));
-    font-weight:600; letter-spacing:calc(-0.4 * var(--u));
+    font-family:'Salty Ages', 'Syne', serif;
+    font-size:calc(56 * var(--u)); line-height:calc(64 * var(--u));
+    font-weight:700; letter-spacing:calc(0.3 * var(--u));
     color:var(--ink);
   }
   /* No overflow clip: cropping a 63u face to wipe it in cuts the descenders
@@ -265,7 +265,11 @@
   .headline-name-wrap,
   .headline-shimmer,
   .headline .headline-name-wrap,
-  .headline .headline-shimmer {
+  .headline .headline-shimmer,
+  .dia-text-reveal,
+  #dia-product-design,
+  .headline .dia-text-reveal,
+  .headline #dia-product-design {
     font-family: 'Salty Ages', 'Syne', serif !important;
     font-weight: 700 !important;
     letter-spacing: calc(0.3 * var(--u));
@@ -332,6 +336,9 @@
 
   /* ── MagicUI Dia Text Reveal on Rotating Roles ───────────────────── */
   .dia-text-reveal {
+    font-family: 'Salty Ages', 'Syne', serif !important;
+    font-weight: 700 !important;
+    letter-spacing: calc(0.3 * var(--u));
     display: inline-block;
     color: transparent;
     -webkit-background-clip: text;

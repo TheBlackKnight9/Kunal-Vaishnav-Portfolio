@@ -113,7 +113,15 @@ export default function ContactSection() {
                   <div className="text-[11px] uppercase tracking-[0.18em] text-[#6b7b65] font-mono mb-2">
                     Network
                   </div>
-                  <div className="flex items-center gap-4">
+                  <div className="flex flex-wrap items-center gap-3">
+                    <a
+                      href="https://www.behance.net/kunalvaishnav3/projects"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="px-3.5 py-1.5 rounded-full bg-[#e3ecdc] text-[#1c2419] text-xs font-medium hover:bg-[#d6e5cf] transition-colors"
+                    >
+                      Behance ↗
+                    </a>
                     <a
                       href="https://linkedin.com"
                       target="_blank"
